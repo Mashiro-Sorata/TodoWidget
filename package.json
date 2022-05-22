@@ -1,6 +1,6 @@
 {
     "name": "top.mashiros.widget.todo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     
     "title": {
         "en": "Todo List",
@@ -10,6 +10,13 @@
     "description": {
         "en": "A simple todo list widget on desktop",
         "zh": "一个简单的桌面任务清单挂件"
+    },
+
+    "homepage": "https://github.com/Mashiro-Sorata/TodoWidget",
+
+    "bugs": {
+        "email": "mashiro_sorata@qq.com",
+        "url": "https://github.com/Mashiro-Sorata/TodoWidget/issues"
     },
 
     "author": {

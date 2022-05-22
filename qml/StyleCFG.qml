@@ -2,7 +2,6 @@ import QtQuick 2.12
 
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-import QtGraphicalEffects 1.0
 
 import NERvGear 1.0 as NVG
 import NERvGear.Controls 1.0
@@ -71,13 +70,6 @@ NVG.Window {
                             widget.settings.styles = rootPreference.save();
                         }
 
-                        P.TextFieldPreference {
-                            name: "__Version"
-                            visible: false
-                            enabled: visible
-                            defaultValue: defaultValues["__Version"]
-                        }
-
                         P.DialogPreference {
                             name: "Index Settings"
                             label: qsTr("Index Settings")
@@ -117,6 +109,22 @@ NVG.Window {
                                 name: "Color"
                                 label: qsTr("Color")
                                 defaultValue: defaultValues["Index Settings"]["Color"]
+                            }
+
+                            P.ColorPreference {
+                                name: "Shadow Color"
+                                label: qsTr("Shadow Color")
+                                defaultValue: defaultValues["Index Settings"]["Shadow Color"]
+                            }
+
+                            P.SliderPreference {
+                                name: "Shadow Size"
+                                label: qsTr("Shadow Size")
+                                from: 0
+                                to: 100
+                                stepSize: 1
+                                defaultValue: defaultValues["Index Settings"]["Shadow Size"]
+                                displayValue: value + "%"
                             }
 
                             P.SliderPreference {
@@ -169,6 +177,22 @@ NVG.Window {
                                 name: "Done Color"
                                 label: qsTr("Done Color")
                                 defaultValue: defaultValues["Content Settings"]["Done Color"]
+                            }
+
+                            P.ColorPreference {
+                                name: "Shadow Color"
+                                label: qsTr("Shadow Color")
+                                defaultValue: defaultValues["Content Settings"]["Shadow Color"]
+                            }
+
+                            P.SliderPreference {
+                                name: "Shadow Size"
+                                label: qsTr("Shadow Size")
+                                from: 0
+                                to: 100
+                                stepSize: 1
+                                defaultValue: defaultValues["Content Settings"]["Shadow Size"]
+                                displayValue: value + "%"
                             }
 
                             P.SwitchPreference {
@@ -247,10 +271,6 @@ NVG.Window {
 
 
                         Component.onCompleted: {
-                            if(!widget.settings.styles) {
-                                configuration = rootPreference.save();
-                                widget.settings.styles = configuration;
-                            }
                             rootPreference.load(widget.settings.styles);
                             configuration = widget.settings.styles;
                         }

@@ -3,14 +3,14 @@ import QtQml.Models 2.3
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import QtGraphicalEffects 1.12
 
 import NERvGear 1.0 as NVG
 import NERvGear.Templates 1.0 as T
 import NERvGear.Preferences 1.0 as P
 
-T.Widget {
+WidgetTemplate {
     id: widget
-    visible: true
 
     editing: dialog.active
 
@@ -36,13 +36,8 @@ T.Widget {
         }
     }
 
-
-    readonly property var fonts: Qt.fontFamilies()
-    readonly property var fontweight: [Font.Light, Font.Normal, Font.Bold]
-    readonly property var sfontweight: [qsTr("Light"), qsTr("Normal"), qsTr("Bold")]
-
-    readonly property var defaultValues: {
-        "__Version": "1.0.1",
+    version: "1.0.1"
+    defaultValues: {
         "Index Settings":
         {
             "Text": "Todo",
@@ -50,6 +45,8 @@ T.Widget {
             "Font Size": 30,
             "Font Weight": 1,
             "Color": "#f5f5f5",
+            "Shadow Color": "#f5f5f5",
+            "Shadow Size": 0,
             "X Offset": 0
         },
         "Content Settings":
@@ -59,6 +56,8 @@ T.Widget {
             "Font Weight": 1,
             "Todo Color": "#fffcf9",
             "Done Color": "#616161",
+            "Shadow Color": "#f5f5f5",
+            "Shadow Size": 0,
             "Show Priority Flag": true,
             "Priority Low Color": "#00ff00",
             "Priority Normal Color": "#ffffff",
@@ -71,6 +70,22 @@ T.Widget {
         "Hover Color": "#9e9e9e",
         "Confirm Before Delete": true
     }
+
+    onCompleted: {
+        widget.settings.view = widget.settings.view ?? 0;
+        widget.settings.auto_sort = widget.settings.auto_sort ?? true;
+        widget.settings.reversed_by_time = widget.settings.reversed_by_time ?? false;
+        if(widget.settings.data) {
+            sortData();
+        }
+        else
+            widget.settings.data = [];
+    }
+
+
+    readonly property var fonts: Qt.fontFamilies()
+    readonly property var fontweight: [Font.Light, Font.Normal, Font.Bold]
+    readonly property var sfontweight: [qsTr("Light"), qsTr("Normal"), qsTr("Bold")]
 
     readonly property var configs: widget.settings.styles
 
@@ -234,6 +249,10 @@ T.Widget {
         Text {
             id: todo_btn_text
             text: configs["Index Settings"]["Text"] ? configs["Index Settings"]["Text"] : "Todo"
+
+            style: Text.Outline
+            styleColor: "transparent"
+
             font.pointSize: configs["Index Settings"]["Font Size"]
             font.family: fonts[configs["Index Settings"]["Font Style"]]
             font.weight: fontweight[configs["Index Settings"]["Font Weight"]]
@@ -241,6 +260,12 @@ T.Widget {
             font.underline: false
             anchors.leftMargin: 24
             color: configs["Index Settings"]["Color"]
+            layer.enabled: Boolean(configs["Index Settings"]["Shadow Size"])
+            layer.effect: Glow {
+                color: configs["Index Settings"]["Shadow Color"]
+                samples: todo_btn_text.height*configs["Index Settings"]["Shadow Size"]/200
+                spread: 0
+            }
             Rectangle {
                 anchors.fill: parent
                 id: bg
@@ -331,6 +356,16 @@ T.Widget {
                     font.underline: false
                     font.family: fonts[configs["Content Settings"]["Font Style"]]
                     font.weight: fontweight[configs["Content Settings"]["Font Weight"]]
+
+                    style: Text.Outline
+                    styleColor: "transparent"
+
+                    layer.enabled: Boolean(configs["Content Settings"]["Shadow Size"])
+                    layer.effect: Glow {
+                        color: configs["Content Settings"]["Shadow Color"]
+                        samples: todo_text.height*configs["Content Settings"]["Shadow Size"]/200
+                        spread: 0
+                    }
                 }
                 MouseArea {
                     anchors.fill: parent
@@ -390,6 +425,12 @@ T.Widget {
                         font.pointSize: 12
                         text: "☰"
                         color: configs["Content Settings"]["Button Color"]
+                        layer.enabled: Boolean(configs["Content Settings"]["Shadow Size"])
+                        layer.effect: Glow {
+                            color: configs["Content Settings"]["Shadow Color"]
+                            samples: todo_text.height*configs["Content Settings"]["Shadow Size"]/200
+                            spread: 0
+                        }
                         Behavior on color {
                             ColorAnimation {
                                 duration: 100
@@ -416,6 +457,12 @@ T.Widget {
                         font.pointSize: 16
                         text: "✖"
                         color: configs["Content Settings"]["Button Color"]
+                        layer.enabled: Boolean(configs["Content Settings"]["Shadow Size"])
+                        layer.effect: Glow {
+                            color: configs["Content Settings"]["Shadow Color"]
+                            samples: todo_text.height*configs["Content Settings"]["Shadow Size"]/200
+                            spread: 0
+                        }
                         Behavior on color {
                             ColorAnimation {
                                 duration: 100
@@ -482,23 +529,5 @@ T.Widget {
         width: widget.width
         anchors.margins: 0
         spacing: 0
-    }
-
-    Component.onCompleted: {
-        if (!widget.settings.styles) {
-            widget.settings.styles = defaultValues;
-        } else if (widget.settings.styles["__Version"] !== defaultValues["__Version"]) {
-            delete widget.settings.styles["__Version"];
-            widget.settings.styles = Object.assign(defaultValues, widget.settings.styles);
-        }
-
-        widget.settings.view = widget.settings.view ?? 0;
-        widget.settings.auto_sort = widget.settings.auto_sort ?? true;
-        widget.settings.reversed_by_time = widget.settings.reversed_by_time ?? false;
-        if(widget.settings.data) {
-            sortData();
-        }
-        else
-            widget.settings.data = [];
     }
 }
