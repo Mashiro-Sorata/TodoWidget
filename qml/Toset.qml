@@ -84,10 +84,16 @@ NVG.Window {
                 let cfg = rootPreference.save();
                 if (cfg.todo.length > 0) {
                     if (index > -1) {
-                        todoModel.set(index, {"todo": cfg.todo, "priority": cfg.priority});
-                        let _data = widget.settings.data;
-                        _data[index].todo = cfg.todo;
-                        _data[index].priority = cfg.priority;
+                        let currentItem = todoModel.get(index);
+                        let updatedItem = {
+                            "todo": cfg.todo,
+                            "priority": cfg.priority,
+                            "done": currentItem.done,
+                            "createTime": currentItem.createTime
+                        };
+                        todoModel.set(index, updatedItem);
+                        let _data = widget.settings.data.slice();
+                        _data[index] = Object.assign({}, _data[index], updatedItem);
                         widget.settings.data = _data;
                     } else {
                         let _time = new Date();
