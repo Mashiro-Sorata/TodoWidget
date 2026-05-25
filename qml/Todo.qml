@@ -475,8 +475,8 @@ WidgetTemplate {
                             comfirmDialog.open();
                         } else {
                             todoModel.remove(index);
-                            let data = widget.settings.data;
-                            data.pop(index);
+                            let data = widget.settings.data.slice();
+                            data.splice(index, 1);
                             widget.settings.data = data;
                         }
                     }
@@ -514,8 +514,8 @@ WidgetTemplate {
 
         onAccepted: {
             todoModel.remove(index);
-            let data = widget.settings.data;
-            data.pop(index);
+            let data = widget.settings.data.slice();
+            data.splice(index, 1);
             widget.settings.data = data;
         }
     }
