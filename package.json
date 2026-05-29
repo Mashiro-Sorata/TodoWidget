@@ -1,6 +1,6 @@
 {
     "name": "top.mashiros.widget.todo",
-    "version": "1.0.1",
+    "version": "1.1.0",
     
     "title": {
         "en": "Todo List",
@@ -22,7 +22,7 @@
     "author": {
         "name": "Mashiro_Sorata",
         "email": "mashiro_sorata@qq.com",
-        "url": "http://www.mashiros.top/"
+        "url": "http://mashiros.top/"
     },
 
     "engines": {

@@ -11,7 +11,7 @@ import NERvGear.Preferences 1.0 as P
 
 WidgetTemplate {
     id: widget
-
+    title: qsTr("Todo List Widget")
     editing: dialog.active
 
     action: T.Action {
@@ -36,7 +36,7 @@ WidgetTemplate {
         }
     }
 
-    version: "1.0.1"
+    version: "1.1.0"
     defaultValues: {
         "Index Settings":
         {
@@ -72,6 +72,20 @@ WidgetTemplate {
     }
 
     onCompleted: {
+        widget.settings.index_font_style = widget.settings.index_font_style ?? "";
+        let _i = fonts.indexOf(widget.settings.index_font_style);
+        if (_i === -1) {
+            widget.settings.index_font_style = fonts[widget.settings.styles["Index Settings"]["Font Style"]];
+        } else {
+             widget.settings.styles["Index Settings"]["Font Style"] = _i;
+        }
+        widget.settings.content_font_style = widget.settings.content_font_style ?? "";
+        _i = fonts.indexOf(widget.settings.index_font_style);
+        if (_i === -1) {
+            widget.settings.content_font_style = fonts[widget.settings.styles["Content Settings"]["Font Style"]];
+        } else {
+             widget.settings.styles["Content Settings"]["Font Style"] = _i;
+        }
         widget.settings.view = widget.settings.view ?? 0;
         widget.settings.auto_sort = widget.settings.auto_sort ?? true;
         widget.settings.reversed_by_time = widget.settings.reversed_by_time ?? false;

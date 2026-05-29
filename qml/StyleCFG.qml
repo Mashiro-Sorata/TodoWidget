@@ -68,6 +68,8 @@ NVG.Window {
 
                         onPreferenceEdited: {
                             widget.settings.styles = rootPreference.save();
+                            widget.settings.index_font_style = fonts[widget.settings.styles["Index Settings"]["Font Style"]];
+                            widget.settings.content_font_style = fonts[widget.settings.styles["Content Settings"]["Font Style"]];
                         }
 
                         P.DialogPreference {
@@ -282,6 +284,8 @@ NVG.Window {
 
     onClosing: {
         widget.settings.styles = configuration;
+        widget.settings.index_font_style = fonts[widget.settings.styles["Index Settings"]["Font Style"]];
+        widget.settings.content_font_style = fonts[widget.settings.styles["Content Settings"]["Font Style"]];
         styleDialog.active = false;
     }
 }
