@@ -15,104 +15,104 @@
         <translation>配置项</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="75"/>
+        <location filename="qml/StyleCFG.qml" line="77"/>
         <source>Index Settings</source>
         <translation>标题设置</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="80"/>
+        <location filename="qml/StyleCFG.qml" line="82"/>
         <source>Text</source>
         <translation>文本</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="86"/>
-        <location filename="qml/StyleCFG.qml" line="148"/>
+        <location filename="qml/StyleCFG.qml" line="88"/>
+        <location filename="qml/StyleCFG.qml" line="150"/>
         <source>Font Style</source>
         <translation>字体样式</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="93"/>
-        <location filename="qml/StyleCFG.qml" line="155"/>
+        <location filename="qml/StyleCFG.qml" line="95"/>
+        <location filename="qml/StyleCFG.qml" line="157"/>
         <source>Font Size</source>
         <translation>字体大小</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="103"/>
-        <location filename="qml/StyleCFG.qml" line="165"/>
+        <location filename="qml/StyleCFG.qml" line="105"/>
+        <location filename="qml/StyleCFG.qml" line="167"/>
         <source>Font Weight</source>
         <translation>字体粗细</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="110"/>
+        <location filename="qml/StyleCFG.qml" line="112"/>
         <source>Color</source>
         <translation>颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="116"/>
-        <location filename="qml/StyleCFG.qml" line="184"/>
+        <location filename="qml/StyleCFG.qml" line="118"/>
+        <location filename="qml/StyleCFG.qml" line="186"/>
         <source>Shadow Color</source>
         <translation>阴影颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="122"/>
-        <location filename="qml/StyleCFG.qml" line="190"/>
+        <location filename="qml/StyleCFG.qml" line="124"/>
+        <location filename="qml/StyleCFG.qml" line="192"/>
         <source>Shadow Size</source>
         <translation>阴影大小</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="132"/>
-        <location filename="qml/StyleCFG.qml" line="241"/>
+        <location filename="qml/StyleCFG.qml" line="134"/>
+        <location filename="qml/StyleCFG.qml" line="243"/>
         <source>X Offset</source>
         <translation>X方向偏移量</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="143"/>
+        <location filename="qml/StyleCFG.qml" line="145"/>
         <source>Content Settings</source>
         <translation>内容设置</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="172"/>
+        <location filename="qml/StyleCFG.qml" line="174"/>
         <source>Todo Color</source>
         <translation>未完成颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="178"/>
+        <location filename="qml/StyleCFG.qml" line="180"/>
         <source>Done Color</source>
         <translation>已完成颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="201"/>
+        <location filename="qml/StyleCFG.qml" line="203"/>
         <source>Show Priority Flag</source>
         <oldsource>Show Priority</oldsource>
         <translation>显示优先标志</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="207"/>
+        <location filename="qml/StyleCFG.qml" line="209"/>
         <source>Priority Low Color</source>
         <translation>低优先级颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="214"/>
+        <location filename="qml/StyleCFG.qml" line="216"/>
         <source>Priority Normal Color</source>
         <translation>普通优先级颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="221"/>
+        <location filename="qml/StyleCFG.qml" line="223"/>
         <source>Priority Medium Color</source>
         <translation>中优先级颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="228"/>
+        <location filename="qml/StyleCFG.qml" line="230"/>
         <source>Priority High Color</source>
         <translation>高优先级颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="235"/>
+        <location filename="qml/StyleCFG.qml" line="237"/>
         <source>Button Color</source>
         <translation>按钮颜色</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="268"/>
+        <location filename="qml/StyleCFG.qml" line="270"/>
         <source>Confirm Before Delete</source>
         <translation>删除前确认</translation>
     </message>
@@ -121,18 +121,23 @@
         <translation type="vanished">行高度</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="251"/>
+        <location filename="qml/StyleCFG.qml" line="253"/>
         <source>Y Offset</source>
         <translation>Y方向偏移量</translation>
     </message>
     <message>
-        <location filename="qml/StyleCFG.qml" line="262"/>
+        <location filename="qml/StyleCFG.qml" line="264"/>
         <source>Hover Color</source>
         <translation>悬浮颜色</translation>
     </message>
 </context>
 <context>
     <name>Todo</name>
+    <message>
+        <location filename="qml/Todo.qml" line="14"/>
+        <source>Todo List Widget</source>
+        <translation>任务清单挂件</translation>
+    </message>
     <message>
         <location filename="qml/Todo.qml" line="20"/>
         <source>Todo List Action</source>
@@ -150,58 +155,58 @@
         <translation>新项目</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="88"/>
+        <location filename="qml/Todo.qml" line="102"/>
         <source>Light</source>
         <translation>细体</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="88"/>
+        <location filename="qml/Todo.qml" line="102"/>
         <source>Normal</source>
         <translation>常规</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="88"/>
+        <location filename="qml/Todo.qml" line="102"/>
         <source>Bold</source>
         <translation>粗体</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="97"/>
+        <location filename="qml/Todo.qml" line="111"/>
         <source>All</source>
         <translation>所有</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="113"/>
+        <location filename="qml/Todo.qml" line="127"/>
         <source>Todo</source>
         <translation>未完成</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="129"/>
+        <location filename="qml/Todo.qml" line="143"/>
         <source>Done</source>
         <translation>已完成</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="145"/>
+        <location filename="qml/Todo.qml" line="159"/>
         <source>Auto Sort</source>
         <translation>自动排序</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="156"/>
+        <location filename="qml/Todo.qml" line="170"/>
         <source>Reversed by Time</source>
         <translation>按时间倒序</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="166"/>
+        <location filename="qml/Todo.qml" line="180"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="502"/>
+        <location filename="qml/Todo.qml" line="516"/>
         <source>Warning</source>
         <oldsource>Warining</oldsource>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="qml/Todo.qml" line="510"/>
+        <location filename="qml/Todo.qml" line="524"/>
         <source>Are you sure you want to delete?</source>
         <translation>您确定要删除吗？</translation>
     </message>
